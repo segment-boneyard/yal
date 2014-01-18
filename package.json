@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Yet-Another-Logger that pushes logs to log servers with axon to delegate network overhead",
   "keywords": ["log", "logger", "logging", "axon", "tcp"],
+  "repository": "segmentio/yal",
   "author": "friends@segment.io",
   "engines": {
     "node": ">= 0.8"
