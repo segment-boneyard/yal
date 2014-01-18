@@ -1,0 +1,19 @@
+{
+  "name": "yal",
+  "version": "1.0.0",
+  "description": "Yet-Another-Logger that pushes logs to log servers with axon to delegate network overhead",
+  "keywords": ["log", "logger", "logging", "axon", "tcp"],
+  "author": "friends@segment.io",
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "dependencies": {
+    "axon": "~1.0.0",
+    "debug": "~0.7.4"
+  },
+  "devDependencies": {
+    "should": "~2.1.1",
+    "mocha": "~1.16.2"
+  },
+  "license": "MIT"
+}
