@@ -4,12 +4,11 @@
   Yet-Another-Logger that pushes logs to log servers with axon/tcp to delegate network overhead. The log server implementation then fans out
   to remote services, elastic search, or whatever you like.
 
-  I've found that while fanout tools like Winston help with logging to
-  multiple services, you should not use it directly in your application(s),
-  this is especially true as many logging services are enabled __only__ in
-  production, and thus may not be tested properly locally or in staging
-  environment. Delegating this responsibility to log servers that are
-  not mission critical is a simple solution.
+  If you're like us and you distribute logs to several remote services,
+  you may be using a tool like Winston to do so, and while this is helpful
+  it's also brittle to use in mission-critical applications.
+
+  YAL's solution is to simply distribute messages over TCP (via axon) to one or more log servers, delegating the task of processing or shipping messages off to these services. This is especially problematic when logging services are enabled __only__ in production, and thus may not be tested properly locally or in staging environment. This can and likely will bite you.
 
 ## Installation
 
