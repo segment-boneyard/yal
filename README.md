@@ -38,23 +38,6 @@ $ npm install yal
 
 ```js
 var Logger = require('yal');
-var axon = require('axon');
-
-var a = axon.socket('pull');
-a.format('json');
-a.bind('tcp://localhost:5000');
-
-a.on('message', function(_){
-  console.log('A: %j', _.message);
-});
-
-var b = axon.socket('pull');
-b.format('json');
-b.bind('tcp://localhost:5001');
-
-b.on('message', function(_){
-  console.log('B: %j', _.message);
-});
 
 var log = new Logger([
   'tcp://localhost:5000',
