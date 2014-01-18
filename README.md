@@ -18,6 +18,7 @@ $ npm install yal
 
 ## About
 
+ - through [axon](https://github.com/visionmedia/axon) re-connection and failover is supported
  - when __NODE_ENV__ is "development" the log level defaults to "debug"
  - when __NODE_ENV__ is not "development" the log level defaults to "info"
  - when __NODE_ENV__ is "test" the logger will not write to stdio
