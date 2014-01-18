@@ -1,8 +1,7 @@
 
 # YAL
 
-  Yet-Another-Logger that pushes logs to log servers with axon/tcp to delegate network overhead. The log server implementation then fans out
-  to remote services, elastic search, or whatever you like.
+  __Yet-Another-Logger__ that pushes logs to log servers with axon/tcp to delegate network overhead.
 
   If you're like us and you distribute logs to several remote services,
   you may be using a tool like Winston to do so, and while this is helpful
