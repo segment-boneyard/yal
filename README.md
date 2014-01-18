@@ -9,6 +9,8 @@
 
   YAL's solution is to simply distribute messages over TCP (via axon) to one or more log servers, delegating the task of processing or shipping messages off to these services. This is especially problematic when logging services are enabled __only__ in production, and thus may not be tested properly locally or in staging environment. This can and likely will bite you.
 
+  Check out the [YAL server](https://github.com/segmentio/yal-server).
+
 ## Installation
 
 ```
