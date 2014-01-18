@@ -1,6 +1,4 @@
 
-# YAL
-
   ![](https://dl.dropboxusercontent.com/u/6396913/yal/Screen%20Shot%202014-01-18%20at%201.39.51%20PM.png)
 
   __Yet-Another-Logger__ that pushes logs to log servers with axon/tcp to delegate network overhead.
