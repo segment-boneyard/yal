@@ -24,6 +24,8 @@ $ npm install yal
  - the log level may be altered via the __LOG_LEVEL__ environment variable
  - 5 levels are supported: debug, info, warn, error, & fatal
  - you may distribute messages to one or more axon log servers
+ - YAL sends a creation `.timestamp`
+ - YAL sends the `.hostname`
 
 ## Example
 
