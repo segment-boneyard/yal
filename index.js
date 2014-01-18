@@ -7,6 +7,7 @@ var debug = require('debug')('logger');
 var assert = require('assert');
 var axon = require('axon');
 var os = require('os');
+var host = os.hostname();
 
 /**
  * Log level env var.
@@ -100,6 +101,7 @@ Logger.prototype.send = function(level, type, msg){
   // send
   this.sock.send({
     timestamp: +now,
+    hostname: host,
     message: msg,
     level: level,
     type: type

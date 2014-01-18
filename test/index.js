@@ -2,6 +2,7 @@
 var assert = require('assert');
 var Logger = require('..');
 var axon = require('axon');
+var os = require('os');
 
 describe('Logger#send(level, type, msg)', function(){
   it('should send a message', function(done){
@@ -11,6 +12,7 @@ describe('Logger#send(level, type, msg)', function(){
 
     sock.on('message', function(_){
       assert(_.timestamp);
+      assert(_.hostname == os.hostname());
       assert('info' == _.level);
       assert('something' == _.type);
       assert('bar' == _.message.foo);
