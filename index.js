@@ -24,22 +24,22 @@ filter = 'dev' == env
   : (filter || 'info');
 
 /**
+ * Expose `Logger`.
+ */
+
+exports = module.exports = Logger;
+
+/**
  * Log levels.
  */
 
-var levels = {
+var levels = exports.levels = {
   debug: 0,
   info: 1,
   warn: 2,
   error: 3,
   fatal: 4
 };
-
-/**
- * Expose `Logger`.
- */
-
-module.exports = Logger;
 
 /**
  * Initialize a logger with the given `addrs`.
