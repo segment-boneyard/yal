@@ -90,11 +90,11 @@ Logger.prototype.send = function(level, type, msg){
   var now = new Date
 
   if (!test) {
-    var type = n > levels.info ? 'error' : 'log';
+    var meth = n > levels.info ? 'error' : 'log';
     if ('dev' == env) {
-      console[type]('%s - %s - %j', level, type, msg);
+      console[meth]('%s - %s - %j', level, type, msg);
     } else {
-      console[type]('%s (%s) - %s - %j', now.toUTCString(), level, type, msg);
+      console[meth]('%s (%s) - %s - %j', now.toUTCString(), level, type, msg);
     }
   }
 
