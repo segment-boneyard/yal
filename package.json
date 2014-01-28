@@ -1,6 +1,6 @@
 {
   "name": "yal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Yet-Another-Logger that pushes logs to log servers with axon to delegate network overhead",
   "keywords": ["log", "logger", "logging", "axon", "tcp"],
   "repository": "segmentio/yal",
