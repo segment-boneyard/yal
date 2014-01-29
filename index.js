@@ -86,6 +86,9 @@ Logger.prototype.send = function(level, type, msg){
   var n = levels[level];
   if (n < this.filter) return;
 
+  // default msg
+  if (null == msg) msg = {};
+
   // stdio
   var now = new Date
 
