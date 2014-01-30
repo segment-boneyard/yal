@@ -38,10 +38,9 @@ var levels = exports.levels = {
   info: 1,
   warn: 2,
   error: 3,
-  fatal: 4,
-  critical: 5,
-  alert: 6,
-  emergency: 7
+  critical: 4,
+  alert: 5,
+  emergency: 6
 };
 
 /**
