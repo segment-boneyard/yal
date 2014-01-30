@@ -24,7 +24,7 @@ $ npm install yal
  - when __NODE_ENV__ is not "development" the log level defaults to "info"
  - when __NODE_ENV__ is "test" the logger will not write to stdio
  - the log level may be altered via the __LOG_LEVEL__ environment variable
- - 5 levels are supported: debug, info, warn, error, & fatal
+ - standard syslog levels are supported: debug, info, warn, error, fatal, critical, alert, emergency
  - you may distribute messages to one or more axon log servers
  - YAL writes to stdio for local logging / debuggin
  - YAL sends a creation `.timestamp`

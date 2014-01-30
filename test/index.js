@@ -24,7 +24,7 @@ describe('Logger#send(level, type, msg)', function(){
   })
 })
 
-;['debug', 'info', 'warn', 'error', 'fatal'].forEach(function(level){
+;['debug', 'info', 'warn', 'error', 'fatal', 'critical', 'alert', 'emergency'].forEach(function(level){
   describe('Logger#' + level + '(msg)', function(){
     it('should send a message', function(done){
       var sock = axon.socket('pull');
