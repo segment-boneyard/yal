@@ -88,6 +88,9 @@ Logger.prototype.send = function(level, type, msg){
   var n = levels[level];
   if (n < this.filter) return;
 
+  // expose error messages
+  if (msg instanceof Error) msg = clone(msg);
+
   // default msg
   if (null == msg) msg = {};
 
@@ -122,3 +125,17 @@ Object.keys(levels).forEach(function(level){
     this.send(level, type, msg);
   };
 });
+
+/**
+ * Clone `err` with enumerable `.message`.
+ *
+ * @param {Error} err
+ * @return {Object}
+ * @api private
+ */
+
+function clone(err){
+  var ret = { message: err.message };
+  for (var key in err) ret[key] = err[key];
+  return ret;
+}
