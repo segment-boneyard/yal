@@ -135,7 +135,10 @@ Object.keys(levels).forEach(function(level){
  */
 
 function clone(err){
-  var ret = { message: err.message };
+  var ret = {
+    message: err.message,
+    stack: err.stack
+  };
   for (var key in err) ret[key] = err[key];
   return ret;
 }
