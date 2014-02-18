@@ -22,21 +22,22 @@ describe('Logger#send(level, type, msg)', function(){
     var log = new Logger('tcp://localhost:5555');
     log.send('info', 'something', { foo: 'bar' });
   })
-  
-  it('should expose error messages', function(done){
+
+  it('should expose error properties', function(done){
     var sock = axon.socket('pull');
     sock.format('json');
     sock.bind('tcp://localhost:5556');
-    
+
     sock.on('message', function(_){
       assert('something' == _.type);
       assert('message' == _.message.message);
       assert('bar' == _.message.foo);
+      assert(_.message.stack);
       done();
     });
-    
+
     var log = new Logger('tcp://localhost:5556');
-    
+
     var error = new Error('message');
     error.foo = 'bar';
     log.send('error', 'something', error);
