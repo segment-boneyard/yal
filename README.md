@@ -1,7 +1,6 @@
+  <center><img src="https://i.cloudup.com/GPXlzXOlOs.png"></center>
 
-  <img src="https://dl.dropboxusercontent.com/u/6396913/yal/Screen%20Shot%202014-01-18%20at%201.39.51%20PM.png" width=150px>
-
-  __Yet-Another-Logger__ that pushes logs to log servers with axon/tcp to delegate network overhead.
+  __Yet Another Logger__ that pushes logs to log servers with axon/tcp to delegate network overhead.
 
   If you're like us and you distribute logs to several remote services,
   you may be using a tool like Winston to do so, and while this is helpful
