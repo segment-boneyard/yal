@@ -139,6 +139,10 @@ function clone(err){
     message: err.message,
     stack: err.stack
   };
-  for (var key in err) ret[key] = err[key];
+
+  for (var key in err) {
+    ret[key] = err[key];
+  }
+
   return ret;
 }
