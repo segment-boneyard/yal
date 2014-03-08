@@ -88,11 +88,12 @@ Logger.prototype.send = function(level, type, msg){
   var n = levels[level];
   if (n < this.filter) return;
 
-  // expose error messages
-  if (msg instanceof Error) msg = clone(msg);
-
   // default msg
   if (null == msg) msg = {};
+
+  // expose error messages
+  if (msg instanceof Error) msg = clone(msg);
+  if (msg.error instanceof Error) msg.error = clone(msg);
 
   // stdio
   var now = new Date
