@@ -1,6 +1,6 @@
 {
   "name": "yal",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Yet-Another-Logger that pushes logs to log servers with axon to delegate network overhead",
   "keywords": [
     "log",
