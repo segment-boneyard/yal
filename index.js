@@ -93,7 +93,7 @@ Logger.prototype.send = function(level, type, msg){
 
   // expose error messages
   if (msg instanceof Error) msg = clone(msg);
-  if (msg.error instanceof Error) msg.error = clone(msg);
+  if (msg.error instanceof Error) msg.error = clone(msg.error);
 
   // stdio
   var now = new Date
