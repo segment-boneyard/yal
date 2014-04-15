@@ -54,6 +54,7 @@ function Logger(addrs) {
   if ('string' == typeof addrs) addrs = [addrs];
   this.filter = levels[filter];
   assert(addrs, 'log-server addresses required');
+  this.stdio = true;
   this.sock = axon.socket('push');
   this.sock.format('json');
   this.connect(addrs);
@@ -73,6 +74,18 @@ Logger.prototype.connect = function(addrs){
     sock.connect(addr);
   });
 }
+
+/**
+ * Disable stdio.
+ *
+ * @return {Logger}
+ * @api public
+ */
+
+Logger.prototype.silent = function(){
+  this.stdio = false;
+  return this;
+};
 
 /**
  * Send log `msg` of `type` at `level`.
@@ -95,10 +108,11 @@ Logger.prototype.send = function(level, type, msg){
   if (msg instanceof Error) msg = clone(msg);
   if (msg.error instanceof Error) msg.error = clone(msg.error);
 
-  // stdio
-  var now = new Date
+  // timestamp
+  var now = new Date;
 
-  if (!test) {
+  // stdio
+  if (this.stdio && !test) {
     var meth = n > levels.info ? 'error' : 'log';
     if ('dev' == env) {
       console[meth]('%s - %s - %j', level, type, msg);

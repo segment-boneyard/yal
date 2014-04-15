@@ -66,6 +66,10 @@ setInterval(function(){
 
   Send a log message.
 
+### .silent()
+
+  Disable stdio.
+
 ## License
 
  MIT
