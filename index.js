@@ -115,7 +115,7 @@ Logger.prototype.send = function(level, type, msg){
   if (this.stdio && !test) {
     var meth = n > levels.info ? 'error' : 'log';
     if ('dev' == env) {
-      console[meth]('%s - %s - %j', level, type, msg);
+      console[meth]('%s - %s - %s', level, type, JSON.stringify(msg, null, 2));
     } else {
       console[meth]('%s (%s) - %s - %j', now.toUTCString(), level, type, msg);
     }
