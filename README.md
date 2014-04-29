@@ -1,4 +1,6 @@
   <center><img src="https://i.cloudup.com/GPXlzXOlOs.png"></center>
+  [![Build Status](https://travis-ci.org/segmentio/yal.png?branch=master)](https://travis-ci.org/segmentio/yal)
+  
 
   __Yet Another Logger__ that pushes logs to log servers with axon/tcp to delegate network overhead.
 
