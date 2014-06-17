@@ -1,4 +1,10 @@
 
+1.3.1 / 2014-06-17
+==================
+
+ * json.stringify() the message in console output so you can actually read it.
+   we should probably make this optional later, greppable output is nice as well
+
 1.3.0 / 2014-04-17
 ==================
 
