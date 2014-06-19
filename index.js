@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+var stringify = require('json-stringify-safe');
 var debug = require('debug')('logger');
 var assert = require('assert');
 var axon = require('axon');
@@ -115,9 +116,9 @@ Logger.prototype.send = function(level, type, msg){
   if (this.stdio && !test) {
     var meth = n > levels.info ? 'error' : 'log';
     if ('dev' == env) {
-      console[meth]('%s - %s - %s', level, type, JSON.stringify(msg, null, 2));
+      console[meth]('%s - %s - %s', level, type, stringify(msg, null, 2));
     } else {
-      console[meth]('%s (%s) - %s - %s', now.toUTCString(), level, type, JSON.stringify(msg, null, 2));
+      console[meth]('%s (%s) - %s - %s', now.toUTCString(), level, type, stringify(msg, null, 2));
     }
   }
 

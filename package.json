@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "axon": "~1.0.0",
-    "debug": "~0.7.4"
+    "debug": "~0.7.4",
+    "json-stringify-safe": "~5.0.0"
   },
   "devDependencies": {
     "should": "~2.1.1",

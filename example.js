@@ -7,7 +7,7 @@ a.format('json');
 a.bind('tcp://localhost:5000');
 
 a.on('message', function(_){
-  console.log('A: %j', _.message);
+  // console.log('A: %j', _.message);
 });
 
 var b = axon.socket('pull');
@@ -15,7 +15,7 @@ b.format('json');
 b.bind('tcp://localhost:5001');
 
 b.on('message', function(_){
-  console.log('B: %j', _.message);
+  // console.log('B: %j', _.message);
 });
 
 var log = new Logger([
