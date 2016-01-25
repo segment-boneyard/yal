@@ -1,4 +1,11 @@
 
+1.3.3 / 2016-01-25
+==================
+
+  * Merge pull request #17 from segmentio/limits
+  * Add .hwm option
+
+
 1.3.2 / 2014-06-19
 ==================
 
