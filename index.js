@@ -48,15 +48,18 @@ var levels = exports.levels = {
  * Initialize a logger with the given `addrs`.
  *
  * @param {Array|String} addrs
+ * @param {Object} options
  * @api public
  */
 
-function Logger(addrs) {
+function Logger(addrs, options) {
   if ('string' == typeof addrs) addrs = [addrs];
+  options = options || {};
   this.filter = levels[filter];
   assert(addrs, 'log-server addresses required');
   this.stdio = true;
   this.sock = axon.socket('push');
+  this.sock.set('hwm', options.hwm || Infinity);
   this.sock.format('json');
   this.connect(addrs);
 }

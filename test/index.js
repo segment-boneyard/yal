@@ -42,6 +42,11 @@ describe('Logger#send(level, type, msg)', function(){
     error.foo = 'bar';
     log.send('error', 'something', error);
   })
+
+  it('should respect hwm setting', function(){
+    var log = new Logger('tcp://leak:4000', { hwm: 100 });
+    assert(log.sock.get('hwm') == 100);
+  })
 })
 
 ;['debug', 'info', 'warn', 'error', 'critical', 'alert', 'emergency'].forEach(function(level){
