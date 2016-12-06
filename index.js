@@ -58,6 +58,11 @@ function Logger(addrs, options) {
   this.filter = levels[filter];
   assert(addrs, 'log-server addresses required');
   this.stdio = true;
+  this.indent = 2; // 2 is the default legacy value.
+  // 0 is a valid value, so use hasOwnProperty.
+  if (options.hasOwnProperty('indent')) {
+    this.indent = options.indent;
+  }
   this.sock = axon.socket('push');
   this.sock.set('hwm', options.hwm || Infinity);
   this.sock.format('json');
@@ -119,9 +124,9 @@ Logger.prototype.send = function(level, type, msg){
   if (this.stdio && !test) {
     var meth = n > levels.info ? 'error' : 'log';
     if ('dev' == env) {
-      console[meth]('%s - %s - %s', level, type, stringify(msg, null, 2));
+      console[meth]('%s - %s - %s', level, type, stringify(msg, null, this.indent));
     } else {
-      console[meth]('%s (%s) - %s - %s', now.toUTCString(), level, type, stringify(msg, null, 2));
+      console[meth]('%s (%s) - %s - %s', now.toUTCString(), level, type, stringify(msg, null, this.indent));
     }
   }
 
