@@ -1,4 +1,10 @@
 
+1.3.4 / 2016-12-06
+==================
+
+  * Merge pull request #18 from segmentio/indent
+  * Add option to indent json output.
+
 1.3.3 / 2016-01-25
 ==================
 
